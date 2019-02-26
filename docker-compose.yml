@@ -1,0 +1,13 @@
+version: "3.4"
+services:
+  app:
+    container_name: sbt
+    build:
+      context: ./server/
+      dockerfile: Dockerfile
+    tty: true
+    privileged: true
+    volumes:
+      - ./server/volume:/home/sbt
+    ports:
+      - 8080:8080
